@@ -21,14 +21,32 @@ class _NearByState extends State<NearBy> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-      padding: EdgeInsets.all(40),
+      padding: EdgeInsets.all(20),
       child: Column(
         children: [
-          SimpleClock()
+          ChangeString(),
+          SizedBox(height: 30),
+          section1,
         ],
       ),
     ));
   }
+  
+  Widget section1 = Container(
+    padding: EdgeInsets.all(10),
+    child: Column(
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset('assets/images/house.png',width: 300,height: 130)
+          ],
+        ),
+        SizedBox(height: 30,)
+      ],
+    ),
+  );
+
 }
 
 

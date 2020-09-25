@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #애니메이션 라이브러리
+  animated_text_kit: ^2.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
