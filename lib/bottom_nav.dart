@@ -33,6 +33,7 @@ class _BottomNavState extends State<BottomNav> {
         controller: pageController,
         onPageChanged: onPageChanged,
         children: _page,
+        physics: NeverScrollableScrollPhysics(),    //슬라이드 비활성화
       ),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
