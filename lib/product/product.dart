@@ -18,25 +18,28 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: _product.photo,
-          ),
-          Expanded(
-            flex: 3,
-            child: _ProductDescription(
-              _product
+      child: Card(
+        margin: EdgeInsets.only(bottom: 0.01),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              child: _product.photo,
             ),
-          ),
-          const Icon(
-            Icons.more_vert,
-            size: 16.0,
-          ),
-        ],
-      ),
+            Expanded(
+              flex: 3,
+              child: _ProductDescription(
+                  _product
+              ),
+            ),
+            const Icon(
+              Icons.more_vert,
+              size: 16.0,
+            ),
+          ],
+        ),
+      )
     );
   }
 }
