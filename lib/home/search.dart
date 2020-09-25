@@ -49,13 +49,13 @@ class _SearchState extends State<Search> {
           body: TabBarView (
             children: [
               Center(
-                child: Text("0"),
+                child: Text("준비중 1"),
               ),
               Center(
-                child: Text("1"),
+                child: Text("준비중 2"),
               ),
               Center(
-                child: Text("2"),
+                child: Text("준비중 3"),
               )
             ],
           )

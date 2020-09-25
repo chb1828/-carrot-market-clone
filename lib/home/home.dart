@@ -75,7 +75,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin{
                   }
               ),
               Center(
-                child: Text("1"),
+                child: Text("준비중"),
               )
             ],
           )

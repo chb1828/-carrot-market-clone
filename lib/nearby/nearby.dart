@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:market_clone/nearby/changeString.dart';
 
 class NearBy extends StatefulWidget {
   @override
@@ -17,25 +20,15 @@ class _NearByState extends State<NearBy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        body: SingleChildScrollView(
+      padding: EdgeInsets.all(40),
+      child: Column(
+        children: [
+          SimpleClock()
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-    );
+    ));
   }
 }
+
+

@@ -27,7 +27,10 @@ class _ChattingState extends State<Chatting> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              '채팅기능은 준비중입니다.',
+            ),
+            Text(
+              '플로팅 액션 버튼을 누르면 숫자가 올라갑니다.',
             ),
             Text(
               '$_counter',
