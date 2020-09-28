@@ -7,7 +7,11 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin{
+class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
+
+  ScrollController _scrollViewController;
+  TabController _tabController;
+
 
   //더미 데이터
   List<Product> products = [
@@ -30,56 +34,63 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin{
     return DefaultTabController(
         length: 2,
         initialIndex: 0,
-        child:Scaffold(
-          appBar: AppBar(
-              actionsIconTheme: IconThemeData(
-                  size: 30.0,
-                  color: Colors.black,
-                  opacity: 10.0
-              ),
-              backgroundColor: Colors.white,
-              title: Text("영통동",style: TextStyle(color: Colors.black)),
-              actions: <Widget>[
-                Padding(
-                    padding: EdgeInsets.only(right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                            MaterialPageRoute(builder: (context) => Search())
-                        );
-                      },
-                      child: Icon(
-                        Icons.search,
-                        size: 26.0,
-                      ),
-                    )
+        child: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                actionsIconTheme: IconThemeData(
+                    size: 30.0,
+                    color: Colors.black,
+                    opacity: 10.0
                 ),
-                Padding(
-                    padding: EdgeInsets.only(right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Icon(
-                          Icons.notifications_none
-                      ),
-                    )
-                ),
-              ],
-              bottom: topTab),
-          body: TabBarView (
+                backgroundColor: Colors.white,
+                title: Text("영통동",style: TextStyle(color: Colors.black)),
+                actions: <Widget>[
+                  Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Search())
+                          );
+                        },
+                        child: Icon(
+                          Icons.search,
+                          size: 26.0,
+                        ),
+                      )
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Icon(
+                            Icons.notifications_none
+                        ),
+                      )
+                  ),
+                ],
+                pinned: true,
+                floating: true,
+                bottom: topTab,
+              )
+            ];
+          },
+          body: TabBarView(
             children: [
               ListView.builder(
-                  itemCount: products.length,
-                  itemBuilder: (context,index){
-                    return ProductTile(products[index]);
-                  }
+                itemCount: products.length,
+                itemBuilder: (context,index){
+                  return ProductTile(products[index]);
+                },
               ),
               Center(
                 child: Text("준비중"),
               )
             ],
-          )
-        )
+          ),
+        ),
     );
   }
 

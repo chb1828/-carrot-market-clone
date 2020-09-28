@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:market_clone/nearby/changeString.dart';
@@ -20,7 +19,7 @@ class _NearByState extends State<NearBy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
+    body: SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
