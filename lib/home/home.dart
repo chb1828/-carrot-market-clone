@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:market_clone/product/product.dart';
 import 'package:market_clone/home/search.dart';
@@ -7,34 +8,49 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
+class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin,SingleTickerProviderStateMixin {
 
   ScrollController _scrollViewController;
   TabController _tabController;
+  TabBar topTab;
 
+  @override
+  void initState() {
+     super.initState();
+    _tabController = new TabController(vsync: this, length: 2);
+
+     topTab = new TabBar(tabs: <Tab>[
+       new Tab(text: "중고거래"),
+       new Tab(text: "동네생활")
+     ],
+       controller: _tabController,
+       unselectedLabelColor: Colors.black.withOpacity(0.3),
+       indicatorColor: Colors.black,labelColor: Colors.black,);
+  }
+
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   //더미 데이터
   List<Product> products = [
     Product(Image.asset('assets/images/image1.jpg',width: 130,height: 130),"발렌시아가 신발","경기도 수원시 영통구",300000),
     Product(Image.asset('assets/images/image2.jpg',width: 130,height: 130),"나이키 신발","경기도 수원시 권선구",130000),
     Product(Image.asset('assets/images/image3.jpg',width: 130,height: 130),"아디다스 신발","경기도 수원시 팔달구",230000),
-    Product(Image.asset('assets/images/image4.jpg',width: 130,height: 130),"구찌 신발","경기도 수원시 장안구",400000)
+    Product(Image.asset('assets/images/image4.jpg',width: 130,height: 130),"구찌 신발","경기도 수원시 장안구",400000),
+    Product(Image.asset('assets/images/image5.jpg',width: 130,height: 130),"퓨마 신발","경기도 수원시 팔달구",80000)
   ];
 
-  final topTab = new TabBar(tabs: <Tab>[
-    new Tab(text: "중고거래"),
-    new Tab(text: "동네생활")
-  ],
-    unselectedLabelColor: Colors.black.withOpacity(0.3),
-    indicatorColor: Colors.black,labelColor: Colors.black,);
 
   @override
   // ignore: must_call_super
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 2,
-        initialIndex: 0,
-        child: NestedScrollView(
+    return Scaffold(
+        body: NestedScrollView(
+          controller: _scrollViewController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
@@ -78,8 +94,10 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
             ];
           },
           body: TabBarView(
+            controller: _tabController,
             children: [
               ListView.builder(
+                padding: EdgeInsets.all(0),
                 itemCount: products.length,
                 itemBuilder: (context,index){
                   return ProductTile(products[index]);
