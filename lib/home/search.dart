@@ -34,7 +34,7 @@ class _SearchState extends State<Search> {
                       filled: true,
                       fillColor: Colors.black26,
                       hintStyle: TextStyle(fontSize: 17,height: 0.5),
-                      suffixIcon: Icon(Icons.search),
+                      prefixIcon: Icon(Icons.search),
                       contentPadding: const EdgeInsets.all(20.0),
                       border: OutlineInputBorder(
                           borderRadius: const BorderRadius.all(

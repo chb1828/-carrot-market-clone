@@ -29,9 +29,11 @@ class _SimpleClockState extends State<ChangeString> {
                             print("Tap Event");
                           },
                           isRepeatingAnimation: true,
+                          repeatForever: true,
                           text: _stringData,
                           // alignment: Alignment(1.0, 0.5),
-                          textStyle: TextStyle(fontSize: 28.0, fontFamily: "Horizon",color: Colors.orange,fontWeight: FontWeight.bold),
+                          textStyle: TextStyle(fontSize: 24.0, fontFamily: "Horizon",color: Colors.orange,fontWeight: FontWeight.bold),
+                          transitionHeight: 60.0,
                         ),
                         //Text(_now,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0,color: Colors.orange),)
                       ],
