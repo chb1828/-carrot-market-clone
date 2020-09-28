@@ -75,10 +75,6 @@ class _BottomNavState extends State<BottomNav> {
         context: context,
         isScrollControlled: true,
         builder: (context) {
-          print(MediaQuery
-              .of(context)
-              .viewInsets
-              .bottom);
           return SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(bottom: MediaQuery
