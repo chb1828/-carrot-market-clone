@@ -25,14 +25,15 @@ class _NearByState extends State<NearBy> {
       child: Column(
         children: [
           ChangeString(),
-          SizedBox(height: 30),
-          section1,
+          SizedBox(height: 20),
+          _imageSection1,
+          _searchSection,
         ],
       ),
     ));
   }
   
-  Widget section1 = Container(
+  Widget _imageSection1 = Container(
     padding: EdgeInsets.all(10),
     child: Column(
       children: [
@@ -46,7 +47,25 @@ class _NearByState extends State<NearBy> {
       ],
     ),
   );
+  
+  Widget _searchSection = Container(
+    child: Column(
+      children: [
+        TextField(
+          decoration: InputDecoration(
+            hintStyle: TextStyle(fontSize: 17,height: 0.5),
+            hintText: "내 근처에서 주변 가게를 찾아보세요",
+            prefixIcon: Icon(Icons.search),
+            border: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(const Radius.circular(1.0))
+            )
+          ),
+        )
+      ],
+    ),
+  );
 
 }
+
 
 
