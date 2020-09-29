@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:market_clone/product/product.dart';
+import 'package:market_clone/do/product.dart';
 import 'package:market_clone/home/search.dart';
 
 class Home extends StatefulWidget {

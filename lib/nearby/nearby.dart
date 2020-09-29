@@ -42,6 +42,11 @@ class _NearByState extends State<NearBy> {
             ),
             SliverToBoxAdapter(
               child: Column(
+                children: [_recommend],
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Column(
                 children: [_blank],
               ),
             ),
@@ -123,7 +128,7 @@ class _NearByState extends State<NearBy> {
             SizedBox(
               width: 80,
               height: 80,
-              child:             Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
@@ -139,27 +144,26 @@ class _NearByState extends State<NearBy> {
               ),
             ),
             SizedBox(
-              width: 80,
-              height: 80,
-              child:             Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.fastfood),
-                    tooltip: "hire me",
-                    onPressed: () => {},
-                  ),
-                  Text(
-                    "농수산물",
-                    style: TextStyle(fontSize: 11),
-                  )
-                ],
-              )
-            ),
+                width: 80,
+                height: 80,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.fastfood),
+                      tooltip: "hire me",
+                      onPressed: () => {},
+                    ),
+                    Text(
+                      "농수산물",
+                      style: TextStyle(fontSize: 11),
+                    )
+                  ],
+                )),
             SizedBox(
               width: 80,
               height: 80,
-              child:             Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
@@ -195,7 +199,7 @@ class _NearByState extends State<NearBy> {
             SizedBox(
               width: 80,
               height: 80,
-              child:             Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
@@ -215,6 +219,19 @@ class _NearByState extends State<NearBy> {
       ],
     ),
   );
+
+  Widget _recommend = Container(
+      padding: EdgeInsets.all(10),
+      child: Column(children: [
+        Row(
+          children: [
+            Text(
+              "이웃들이 추천한 가게를 확인해보세요",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
+            )
+          ],
+        )
+      ]));
 
   Widget _blank = Container(
     color: Colors.pink,
