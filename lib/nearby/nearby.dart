@@ -95,11 +95,18 @@ class _NearByState extends State<NearBy> {
             )
           ],
         ),
+        SizedBox(height: 20),
         Wrap(
+          direction: Axis.horizontal,
+          alignment: WrapAlignment.start,
+          spacing: 20,
+          runSpacing: 20,
           children: [
-            Padding(
-              padding: EdgeInsets.all(18),
+            SizedBox(
+              width: 80,
+              height: 80,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.person),
@@ -113,9 +120,11 @@ class _NearByState extends State<NearBy> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(18),
-              child: Column(
+            SizedBox(
+              width: 80,
+              height: 80,
+              child:             Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.library_books),
@@ -129,9 +138,11 @@ class _NearByState extends State<NearBy> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(18),
-              child: Column(
+            SizedBox(
+              width: 80,
+              height: 80,
+              child:             Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.fastfood),
@@ -143,11 +154,13 @@ class _NearByState extends State<NearBy> {
                     style: TextStyle(fontSize: 11),
                   )
                 ],
-              ),
+              )
             ),
-            Padding(
-              padding: EdgeInsets.all(18),
-              child: Column(
+            SizedBox(
+              width: 80,
+              height: 80,
+              child:             Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.home),
@@ -161,9 +174,11 @@ class _NearByState extends State<NearBy> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(18),
+            SizedBox(
+              width: 80,
+              height: 80,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.directions_car),
@@ -177,9 +192,11 @@ class _NearByState extends State<NearBy> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(18),
-              child: Column(
+            SizedBox(
+              width: 80,
+              height: 80,
+              child:             Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     icon: Icon(Icons.fiber_smart_record),
@@ -192,13 +209,13 @@ class _NearByState extends State<NearBy> {
                   )
                 ],
               ),
-            ),
+            )
           ],
         )
       ],
     ),
   );
-  
+
   Widget _blank = Container(
     color: Colors.pink,
     width: 500,
