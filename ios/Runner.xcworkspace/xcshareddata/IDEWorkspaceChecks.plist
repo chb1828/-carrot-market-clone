@@ -3,6 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDEDidComputeMac32BitWarning</key>
+	<string>당근마켓 클론</string>
 	<true/>
 </dict>
 </plist>
