@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:market_clone/root.dart';
 
@@ -27,7 +29,46 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: RootPage(),
+      home: SplashScreen(),
+      routes: <String,WidgetBuilder>{
+        '/RootPage': (BuildContext context) => RootPage()
+      },
     );
   }
+}
+
+class SplashScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => new _SplashScreenState();
+
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  startTime() async {
+    var _duration = new Duration(seconds: 3);
+    return new Timer(_duration,navigationPage);
+  }
+
+  void navigationPage () {
+    Navigator.of(context).pushReplacementNamed('/RootPage');
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Image.asset('assets/images/carrot.jpg',width: 130,height: 130)
+      ),
+    );
+  }
+
 }
